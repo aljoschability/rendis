@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+
+<plugin>
+
+	<extension point="org.eclipse.graphiti.ui.imageProviders">
+		<imageProvider
+		   class="com.aljoschability.rendis.ui.RendisImageProvider"
+		   id="com.aljoschability.rendis.ui.RendisImageProvider"/>
+	</extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+		<wizard
+		   class="com.aljoschability.rendis.ui.wizards.CreateResidenceDiagramWizard"
+		   id="com.aljoschability.rendis.ui.wizard1"
+		   name="Rendis DINGS">
+		</wizard>
+	</extension>
+
+	<extension point="org.eclipse.ui.editors">
+		<editor id="com.aljoschability.rendis.ui.editor.model"
+		  class="com.aljoschability.rendis.ui.editors.RendisModelEditor"
+		  contributorClass="com.aljoschability.rendis.ui.editors.RendisModelEditorContributor"
+		  default="true"
+		  extensions="rendis"
+		  name="Rendis Model Editor"/>
+		<editor id="com.aljoschability.rendis.ui.editor.diagram"
+		  class="com.aljoschability.rendis.ui.editors.RendisDiagramEditor"
+		  contributorClass="com.aljoschability.rendis.ui.editors.RendisDiagramEditorContributor"
+		  default="true"
+		  extensions="rendis_diagrams"
+		  name="Rendis Diagram Editor"/>
+	</extension>
+</plugin>

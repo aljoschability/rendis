@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Rendis Room Diagram Editor
+Bundle-SymbolicName: com.aljoschability.rendis.ui.editor.room;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Aljoschability
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.graphiti,
+ org.eclipse.graphiti.mm,
+ org.eclipse.graphiti.pattern,
+ org.eclipse.graphiti.ui,
+ org.eclipse.ui,
+ org.eclipse.xtend.lib,
+ com.aljoschability.rendis,
+ com.aljoschability.rendis.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy

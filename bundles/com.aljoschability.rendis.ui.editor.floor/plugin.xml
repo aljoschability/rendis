@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType
+            id="com.aljoschability.rendis.Floor"
+            name="Floor"
+            type="com.aljoschability.rendis.Floor"/>
+	</extension>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+		  class="com.aljoschability.rendis.ui.editor.FloorDiagramTypeProvider"
+		  id="com.aljoschability.rendis.ui.editor.FloorDiagramTypeProvider"
+		  name="Floor Diagram Provider">
+			<diagramType id="com.aljoschability.rendis.Floor"/>
+			<imageProvider id="com.aljoschability.rendis.ui.RendisImageProvider"/>
+		</diagramTypeProvider>
+	</extension>
+
+</plugin>

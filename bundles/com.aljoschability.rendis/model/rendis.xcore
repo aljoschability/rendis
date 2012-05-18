@@ -1,0 +1,244 @@
+/**
+ * <copyright>
+ * 
+ * Copyright 2013 by Aljoschability and others. All rights reserved.
+ * 
+ * This program and its materials are made available under the terms of the
+ * Eclipse Public License v1.0 which should be contained in this distribution.
+ * 
+ * Contributors:
+ *    Aljoscha Hark <aljoschability@gmail.com> - Initial code
+ * 
+ * </copyright>
+ */
+@Ecore(nsURI="http://www.aljoschability.com/rendis/2012")
+@GenModel(copyrightText="<copyright>\r\n\r\nCopyright 2013 by Aljoschability and others. All rights reserved.\r\n\r\nThis program and its materials are made available under the terms of the\r\nEclipse Public License v1.0 which should be contained in this distribution.\r\n\r\nContributors:\r\n   Aljoscha Hark <aljoschability@gmail.com> - Initial code\r\n\r\n</copyright>",
+	complianceLevel="7.0",
+	nonNLSMarkers="true",
+	codeFormatting="true",
+	creationIcons="false",
+	multipleEditorPages="false",
+	suppressEMFModelTags="true",
+	suppressGenModelAnnotations="false",
+	pluginKey="",
+	providerPackageSuffix="edit",
+	modelDirectory="/com.aljoschability.rendis/src/main/xcore",
+	editDirectory="/com.aljoschability.rendis.edit/src/main/xcore",
+	editPluginID="com.aljoschability.rendis.edit",
+	editPluginClass="com.aljoschability.rendis.edit.Activator")
+package com.aljoschability.rendis
+
+abstract class Part
+{
+	id String[1] ^id
+}
+
+abstract class Named extends Part
+{
+	String[1] name = ""
+}
+
+abstract class Commented extends Named
+{
+	String[1] comment = ""
+}
+
+class Residence extends Commented
+{
+	contains Building[] buildings opposite residence
+	contains Supplier[] suppliers opposite residence
+	contains Channel[] channels opposite residence
+}
+
+class Supplier extends ChannelNode
+{
+	container Residence[1] residence opposite suppliers
+}
+
+class Building extends ChannelNode
+{
+	container Residence[1] residence opposite buildings
+	contains Floor[] floors opposite building
+	contains Room[] rooms opposite building
+	contains Cubicle[] cubicles opposite building
+}
+
+abstract class ChannelNode extends Commented
+{
+	contains ChannelPort[] ports opposite node
+}
+
+class ChannelPort extends Named
+{
+	container ChannelNode[1] node opposite ports
+	refers Channel[1] incoming opposite target
+	refers Channel[1] outgoing opposite source
+}
+
+class Channel extends Named
+{
+	container Residence[1] residence opposite channels
+	refers ChannelPort[1] source opposite outgoing
+	refers ChannelPort[1] target opposite incoming
+	contains Wire[] wires opposite channel
+}
+
+class Floor extends Commented
+{
+	container Building[1] building opposite floors
+	contains Room[] rooms opposite floor
+	contains Cubicle[] cubicles opposite floor
+}
+
+class Room extends Commented
+{
+	container Floor floor opposite rooms
+	container Building building opposite rooms
+	contains Cubicle[] cubicles opposite room
+}
+
+@GenModel(documentation="Schaltschrank")
+class Cubicle extends ChannelNode
+{
+	container Building building opposite cubicles
+	container Floor floor opposite cubicles
+	container Room room opposite cubicles
+	contains CubicleDevice[] devices opposite cubicle
+	contains Wire[] wires opposite cubicle
+}
+
+abstract class CubicleDevice extends Named
+{
+	container Cubicle[1] cubicle opposite devices
+	contains WirePort[] incomings
+	contains WirePort[] outgoings
+}
+
+@GenModel(documentation="Fehlerstromschutzschalter")
+class ResidualCurrentProtectiveDevice extends CubicleDevice
+{
+	int[1] ratedCurrent = "40"
+}
+
+@GenModel(documentation="Sicherungsautomat")
+class CircuitBreaker extends CubicleDevice
+{
+	int[1] ratedCurrent = "16"
+	TrippingCharacteristicType[1] characteristic
+}
+
+@GenModel(documentation="Z�hler")
+class Counter extends CubicleDevice
+{
+	int[1] ratedCurrent = "100"
+}
+
+@GenModel(documentation="Treppenhauslichtautomat")
+class StairwaySwitchTimer extends CubicleDevice
+{
+}
+
+@GenModel(documentation="Trafo")
+class Transformator extends CubicleDevice
+{
+	int[] outputVoltages
+	int[] outputAmperes
+}
+
+class WirePort extends Part
+{
+	refers Wire[] wires
+}
+
+@GenModel(documentation="Phase")
+class Wire extends Part
+{
+	container Cubicle cubicle opposite wires
+	container Channel channel opposite wires
+	refers WirePort[1] target
+	refers WirePort[1] source
+	double[1] crossSection = "1.5"
+}
+
+/*
+ * ###########################################################################
+ * ###########################################################################
+ * ###########################################################################
+ */
+abstract class Location extends Commented
+{
+	contains Distributor[] distributors opposite location
+}
+
+abstract class Distributor extends Location
+{
+	container Location location opposite distributors
+}
+
+@GenModel(documentation="Verteiler")
+class DistributionBox extends Distributor
+{
+	MountingType[1] mounting
+}
+
+enum TrippingCharacteristicType
+{
+	B
+	C
+	D
+	K
+	Z
+}
+
+abstract class Tube
+{
+}
+
+class Device
+{
+}
+
+/**
+ * wipp, aus--wechsel<br/>
+ * wipp, kreuz<br/>
+ * wipp, serie<br />
+ * wipp, wechsel/wechsel<br />
+ * wipp, aus, 2pol<br />
+ * wipp, aus, 3pol<br />
+ * serie/taster<br />
+ * drei stufen<br />
+ */
+abstract class Switch
+{
+}
+
+class OffSwitch extends Switch
+{
+}
+
+class ToggleSwitch extends Switch
+{
+}
+
+class IntermediateSwitch extends Switch
+{
+}
+
+class TwoCircuitSwitch extends Switch
+{
+}
+
+class RetractiveSwitch extends Switch
+{
+}
+
+class PowerSocket
+{
+}
+
+enum MountingType
+{
+	UNKNOWN
+	IN_WALL
+	ON_WALL
+}

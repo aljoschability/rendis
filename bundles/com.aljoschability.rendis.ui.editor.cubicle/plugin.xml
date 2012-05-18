@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType
+            id="com.aljoschability.rendis.Cubicle"
+            name="Cubicle"
+            type="com.aljoschability.rendis.Cubicle"/>
+	</extension>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+		  class="com.aljoschability.rendis.ui.editor.CubicleDiagramTypeProvider"
+		  id="com.aljoschability.rendis.ui.editor.CubicleDiagramTypeProvider"
+		  name="Cubicle Diagram Provider">
+			<diagramType id="com.aljoschability.rendis.Cubicle"/>
+			<imageProvider id="com.aljoschability.rendis.ui.RendisImageProvider"/>
+   <imageProvider
+         id="com.aljoschability.rendis.ui.editor.CubicleImageProvider">
+   </imageProvider>
+		</diagramTypeProvider>
+	</extension>
+ <extension
+       point="org.eclipse.graphiti.ui.imageProviders">
+    <imageProvider
+          class="com.aljoschability.rendis.ui.editor.CubicleImageProvider"
+          id="com.aljoschability.rendis.ui.editor.CubicleImageProvider">
+    </imageProvider>
+ </extension>
+
+</plugin>

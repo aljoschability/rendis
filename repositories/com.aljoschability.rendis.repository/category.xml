@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.upb.pose.feature_0.1.0.qualifier.jar" id="de.upb.pose.feature" version="0.1.0.qualifier"/>
+</site>

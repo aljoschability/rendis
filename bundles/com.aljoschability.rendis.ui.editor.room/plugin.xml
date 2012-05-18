@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType
+            id="com.aljoschability.rendis.Room"
+            name="Room"
+            type="com.aljoschability.rendis.Room"/>
+	</extension>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+		  class="com.aljoschability.rendis.ui.editor.RoomDiagramTypeProvider"
+		  id="com.aljoschability.rendis.ui.editor.RoomDiagramTypeProvider"
+		  name="Room Diagram Provider">
+			<diagramType id="com.aljoschability.rendis.Room"/>
+			<imageProvider id="com.aljoschability.rendis.ui.RendisImageProvider"/>
+		</diagramTypeProvider>
+	</extension>
+
+</plugin>

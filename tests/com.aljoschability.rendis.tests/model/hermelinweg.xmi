@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<rendis:Residence
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rendis="http://www.aljoschability.com/rendis/2012"
+    xsi:schemaLocation="http://www.aljoschability.com/rendis/2012 model/rendis.xcore#/EPackage"
+    id="asddsasda52254"
+    name="Hermelinweg">
+  <buildings
+      id="dfasdfasdfasdf"
+      name="Haus">
+    <floors
+        id="adsfgasdfgasdfg"
+        name="Keller"
+        comment=""/>
+    <floors
+        id="ahgfhsdfadsf"
+        name="Erdgeschoss"/>
+  </buildings>
+  <buildings
+      id="asdasd52435234"
+      name="Garage">
+    <rooms id="asdasdagfdfw4et5"
+        name="Einzelgarage"/>
+    <rooms id="2435wedfsdf"
+        name="Doppelgarage"/>
+    <distributors
+        xsi:type="rendis:DistributionBox"
+        name="Erste Box am Eingang"/>
+  </buildings>
+  <suppliers
+      id="asdasdasda"
+      name="Tschibo"/>
+</rendis:Residence>

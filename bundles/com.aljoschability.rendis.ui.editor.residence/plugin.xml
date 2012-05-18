@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.5"?>
+<plugin>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypes">
+		<diagramType
+            id="com.aljoschability.rendis.Residence"
+            name="Residence"
+            type="com.aljoschability.rendis.Residence"/>
+	</extension>
+
+	<extension point="org.eclipse.graphiti.ui.diagramTypeProviders">
+		<diagramTypeProvider
+		  class="com.aljoschability.rendis.ui.editor.ResidenceDiagramTypeProvider"
+		  id="com.aljoschability.rendis.ui.ResidenceDiagramTypeProvider"
+		  name="Residence Diagram Provider">
+			<diagramType id="com.aljoschability.rendis.Residence"/>
+			<imageProvider id="com.aljoschability.rendis.ui.RendisImageProvider"/>
+		</diagramTypeProvider>
+	</extension>
+
+</plugin>
