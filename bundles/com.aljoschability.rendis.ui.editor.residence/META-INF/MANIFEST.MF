@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Rendis Residence Diagram Editor
+Bundle-Name: %bundle.name
 Bundle-SymbolicName: com.aljoschability.rendis.ui.editor.residence;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-Vendor: Aljoschability
+Bundle-Vendor: %bundle.vendor
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.graphiti,
  org.eclipse.graphiti.mm,
