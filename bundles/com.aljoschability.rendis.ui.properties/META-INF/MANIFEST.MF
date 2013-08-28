@@ -17,4 +17,9 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.xtend.lib,
  com.aljoschability.rendis,
- com.aljoschability.rendis.ui
+ com.aljoschability.rendis.ui,
+ com.aljoschability.eclipse.core.emf;bundle-version="0.2.0",
+ com.aljoschability.eclipse.core.graphiti;bundle-version="0.2.0",
+ com.aljoschability.eclipse.core.properties;bundle-version="0.2.0",
+ com.aljoschability.eclipse.core.runtime;bundle-version="0.2.0",
+ com.aljoschability.eclipse.core.ui;bundle-version="0.2.0"
