@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
-Bundle-SymbolicName: com.aljoschability.rendis.ui.properties;singleton:=true
+Bundle-SymbolicName: com.aljoschability.rendis.properties;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %bundle.vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

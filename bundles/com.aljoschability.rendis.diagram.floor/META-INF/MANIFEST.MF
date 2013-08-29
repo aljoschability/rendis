@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %bundle.name
-Bundle-SymbolicName: com.aljoschability.rendis.ui.editor.room;singleton:=true
+Bundle-SymbolicName: com.aljoschability.rendis.diagram.floor;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: %bundle.vendor
 Require-Bundle: org.eclipse.core.runtime,
