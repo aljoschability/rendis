@@ -1,9 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %bundle.name
+Bundle-Name: %pluginName
 Bundle-SymbolicName: com.aljoschability.rendis;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-Vendor: %bundle.vendor
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.aljoschability.rendis,
  com.aljoschability.rendis.impl,
