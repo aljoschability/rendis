@@ -36,8 +36,8 @@ public class CubicleToolBehaviorProvider extends AbstractRendisToolBehaviorProvi
 			GraphicsAlgorithm pga = ga.getParentGraphicsAlgorithm();
 			int index = pga.getGraphicsAlgorithmChildren().indexOf(ga);
 
-			
-//			return "index=" + index;
+			System.out.println("index=" + index + " NOT USED");
+			// return "index=" + index;
 		}
 
 		return null;
