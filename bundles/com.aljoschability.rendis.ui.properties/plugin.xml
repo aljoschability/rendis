@@ -14,7 +14,8 @@
 	<extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor">
 		<propertyContributor
         contributorId="com.aljoschability.rendis.contributor"
-        labelProvider="com.aljoschability.rendis.ui.properties.providers.PropertySheetLabelProvider">
+        labelProvider="com.aljoschability.rendis.ui.properties.providers.PropertySheetLabelProvider"
+        typeMapper="com.aljoschability.eclipse.core.properties.graphiti.GraphitiTypeMapper">
 			<propertyCategory category="domain"/>
 		</propertyContributor>
 	</extension>
@@ -37,52 +38,69 @@
 	<extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
 		<propertySections contributorId="com.aljoschability.rendis.contributor">
 			<propertySection
-			 class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-			 filter="com.aljoschability.rendis.ui.properties.filters.ResidenceFilter"
-			 id="Residence.name"
-			 tab="general"/>
+         class="com.aljoschability.rendis.ui.properties.NamedNameSection"
+         id="Residence.name"
+         tab="general">
+      <input
+            type="com.aljoschability.rendis.Residence">
+      </input>
+   </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.BuildingFilter"
          id="Building.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.Building">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.FloorFilter"
          id="Floor.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.Floor">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.RoomFilter"
          id="Room.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.Room">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.SupplierFilter"
          id="Supplier.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.Supplier">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.ChannelFilter"
          id="Channel.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.Channel">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.NamedNameSection"
-         filter="com.aljoschability.rendis.ui.properties.filters.ChannelPortFilter"
          id="Port.name"
          tab="general">
+      <input
+            type="com.aljoschability.rendis.ChannelPort">
+      </input>
    </propertySection>
    <propertySection
          class="com.aljoschability.rendis.ui.properties.AdvancedSection"
          enablesFor="1"
-         filter="com.aljoschability.rendis.ui.properties.filters.PartFilter"
          id="advanced"
          tab="advanced">
+      <input
+            type="com.aljoschability.rendis.Part">
+      </input>
    </propertySection>
 		</propertySections>
 	</extension>
