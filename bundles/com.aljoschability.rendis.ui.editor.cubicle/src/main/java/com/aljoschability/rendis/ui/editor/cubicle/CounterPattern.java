@@ -112,7 +112,7 @@ public class CounterPattern extends CubicleDevicePattern {
 			counterText.setValue("00000,0");
 			Font font = manageFont(FONT_MONOSPACE, 10);
 			counterText.setFont(font);
-			counterText.setAngle(270);
+			counterText.setRotation(270d);
 			counterText.setX(2);
 			counterText.setY(3);
 			counterText.setWidth(15);

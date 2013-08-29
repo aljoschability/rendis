@@ -47,6 +47,6 @@ public abstract class AbstractRendisDiagramTypeProvider extends AbstractDiagramT
 
 	@Override
 	public RendisDiagramEditor getDiagramEditor() {
-		return (RendisDiagramEditor) super.getDiagramEditor();
+		return (RendisDiagramEditor) super.getDiagramBehavior();
 	}
 }
