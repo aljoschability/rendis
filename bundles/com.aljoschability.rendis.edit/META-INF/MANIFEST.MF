@@ -1,12 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
+Bundle-Name: %bundle.name
 Bundle-SymbolicName: com.aljoschability.rendis.edit;singleton:=true
 Bundle-Version: 0.1.0.qualifier
-Bundle-ClassPath: .
 Bundle-Activator: com.aljoschability.rendis.edit.Activator$Implementation
-Bundle-Vendor: %providerName
-Bundle-Localization: plugin
+Bundle-Vendor: %bundle.vendor
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: com.aljoschability.rendis.edit
 Require-Bundle: org.eclipse.core.runtime,
